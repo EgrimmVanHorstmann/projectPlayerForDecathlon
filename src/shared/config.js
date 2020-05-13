@@ -5,6 +5,14 @@ export default {
     clientSecret: process.env.VUE_APP_CLIENT_SECRET
   },
   apis: {
-    baseAPI : process.env.VUE_APP_API_SPOTIFY_URl
+    users: {
+      url: `${process.env.VUE_APP_API_SPOTIFY_URl}/me`
+    },
+    artists: {
+      url: `${process.env.VUE_APP_API_SPOTIFY_URl}/artists`
+    },
+    albums: {
+      url: `${process.env.VUE_APP_API_SPOTIFY_URl}/albums`
+    }
   }
 }

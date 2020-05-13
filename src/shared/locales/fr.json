@@ -1,5 +1,13 @@
 {
   "app_name": "Player Decathlon",
   "page_title_error": "Erreur",
-  "page_title_not_found": "404 Non trouvé"
+  "page_title_not_found": "404 Non trouvé",
+  "menu" : {
+    "home" : "Accueil",
+    "artists" : "Artistes",
+    "albums" : "Albums",
+    "explore" : "Explorer",
+    "compilations": "Playlist",
+    "mix" : "Mix"
+  }
 }

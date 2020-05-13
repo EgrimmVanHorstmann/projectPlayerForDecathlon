@@ -1,6 +1,6 @@
 .DS_Store
-.settings
 node_modules
+/dist
 
 # local env files
 .env.local
@@ -14,32 +14,8 @@ yarn-error.log*
 # Editor directories and files
 .idea
 .vscode
-.project
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
-*.sw*
-*.iml
-
-### Vim ###
-# Swap
-[._]*.s[a-v][a-z]
-[._]*.sw[a-p]
-[._]s[a-rt-v][a-z]
-[._]ss[a-gi-z]
-[._]sw[a-p]
-
-# Session
-Session.vim
-
-# Temporary
-.netrwhist
-*~
-# Auto-generated tag files
-tags
-# Persistent undo
-[._]*.un~
-
-package-lock\.json
-yarn.lock
+*.sw?
