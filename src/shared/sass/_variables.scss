@@ -1,0 +1,58 @@
+/// Relative or absolute URL where all assets are served from
+/// @type String
+/// @example scss - When using a CDN
+///   $base-url: 'http://cdn.example.com/assets/';
+$base-url: '~@/shared/assets/' !default;
+
+/// RWD
+$breakpoints: (
+  /* ~336px with root font-size at 16px )*/ 'xsmall': 21em,
+  /* ~450px */ 'small': 28em,
+  /* ~780px -*/ 'medium': 48.75em,
+  /* ~1024px -*/ 'large': 64em,
+  /* ~1366px -*/ 'xlarge': 85em
+) !default;
+
+/// Z-indexes
+$z-1: 1;
+$z-modal: 1001;
+$z-modal-plus: 1999;
+$z-max: 9999;
+$z-map: 399;
+
+/// Headers
+$header-height: 42px;
+
+/// Buttons
+$button-radius-base: 2em;
+$base-border: '1px solid #{$black-alpha}';
+$base-shadow: '0px 4px 6px 0px rgba(0,0,0,0.05)';
+
+$spring-spinner-size: 60px;
+
+:root {
+  --browser-context: 16px;
+  --breakpoint-xsmall: #{map-get($breakpoints, 'xsmall')};
+  --breakpoint-small: #{map-get($breakpoints, 'small')};
+  --breakpoint-medium: #{map-get($breakpoints, 'medium')};
+  --breakpoint-large: #{map-get($breakpoints, 'large')};
+  --breakpoint-xlarge: #{map-get($breakpoints, 'xlarge')};
+
+  // For graphs
+  --current-data-color: #{$current-data-color};
+  --compared-data-color: #{$compared-data-color};
+  --goal-data-color: #{$goal-data-color};
+  --current-data-color-opacity: #{rgba($current-data-color-opacity, 0.1)};
+  --positive-data-color: #{$progress-up};
+  --negative-data-color: #{$progress-down};
+
+  //Map
+  --map-neutral-color: #{$map-neutral-color};
+  --map-selected-site-color: #{$map-selected-site-color};
+
+  // Header
+  --header-height: #{$header-height};
+
+  // Spring spinner
+  --spring-spinner-size: #{$spring-spinner-size};
+}

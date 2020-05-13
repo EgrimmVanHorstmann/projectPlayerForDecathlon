@@ -1,0 +1,98 @@
+// -----------------------------------------------------------------------------
+// This file contains very basic styles.
+// -----------------------------------------------------------------------------
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*, *::after, *::before {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: var(--browser-context);
+}
+
+body {
+  @extend %fs-base;
+  @extend %fw-regular;
+  @extend %primary-font;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: $body-bg-color;
+  line-height: 1.6;
+  color: $brand-text-color;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  direction: ltr;
+
+  &.modal-opened {
+    overflow: hidden;
+  }
+
+  @include print {
+    background-color: white;
+    height: 100%;
+    overflow: visible;
+  }
+}
+
+// LISTS
+// ==============================
+ul, ol {
+  list-style: none !important;
+  margin-bottom: 1rem;
+}
+
+// LINKS
+// ==============================
+a {
+  color: $brand-text-color;
+  text-decoration: none;
+  user-select: none;
+}
+
+/* Progression wrapper after loading */
+.progression-loaded-content {
+  display: inline-flex;
+}
+
+.contextual-dropdown-header-text {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: $charcoal;
+  padding-left: 12px;
+  padding-right: 12px;
+  @extend %fw-semi-bold;
+}
+
+// DETAILS VIEW
+// ==============================
+.details-grid-component {
+  display: flex;
+  flex: 1 0;
+  flex-direction: column;
+}
+
+
+// SCROLLBAR
+// ==============================
+::-webkit-scrollbar:vertical {
+  width: 6px !important;
+}
+
+::-webkit-scrollbar-track:vertical {
+  background: #f1f1f1 !important;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+  background: #888 !important;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:vertical:hover {
+  background: #555 !important;
+}

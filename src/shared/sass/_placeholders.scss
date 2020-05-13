@@ -1,0 +1,21 @@
+// -----------------------------------------------------------------------------
+// This file contains your placeholders
+// -----------------------------------------------------------------------------
+
+%shadow {
+  box-shadow: #{$base-shadow};
+}
+
+%shadow-hover {
+  box-shadow: 0px 8px 6px 0px rgba(0,0,0,0.05);
+}
+
+%shadow-navbar {
+  box-shadow: 0px 4px 6px 2px rgba(0,0,0,0.05);
+}
+
+%ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
