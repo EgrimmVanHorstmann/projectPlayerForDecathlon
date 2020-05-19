@@ -7,8 +7,7 @@ export default {
     Slide
   },
   data() {
-    return {
-    };
+    return {};
   },
   methods: {}
 };
@@ -17,23 +16,23 @@ export default {
 <template>
   <div>
     <header class="header-screen">
-      <Slide>
-        <RouterLink :to="{name: 'home'}" class="">
+      <Slide :closeOnNavigation="true">
+        <RouterLink :to="{name: 'home'}" class>
           <span>{{ $t('menu.home') }}</span>
         </RouterLink>
-        <RouterLink :to="{name: 'albums'}" class="">
+        <RouterLink :to="{name: 'albums'}" class>
           <span>{{ $t('menu.albums') }}</span>
         </RouterLink>
-        <RouterLink :to="{name: 'artists'}" class="">
+        <RouterLink :to="{name: 'artists'}" class>
           <span>{{ $t('menu.artists') }}</span>
         </RouterLink>
-        <RouterLink :to="{name: 'explore'}" class="">
+        <RouterLink :to="{name: 'explore'}" class>
           <span>{{ $t('menu.explore') }}</span>
         </RouterLink>
-        <RouterLink :to="{name: 'compilations'}" class="">
+        <RouterLink :to="{name: 'compilations'}" class>
           <span>{{ $t('menu.compilations') }}</span>
         </RouterLink>
-        <RouterLink :to="{name: 'mix'}" class="">
+        <RouterLink :to="{name: 'mix'}" class>
           <span>{{ $t('menu.mix') }}</span>
         </RouterLink>
       </Slide>

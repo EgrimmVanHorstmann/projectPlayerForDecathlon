@@ -1,9 +1,19 @@
 <script>
+  import { mapActions } from "vuex";
 import AppHeader from "@/app/header/AppHeader";
 export default {
   name: "PlayerApp",
   components: {
     AppHeader
+  },
+  methods: {
+    ...mapActions({
+      init: "player/init"
+    })
+  },
+
+  created() {
+    this.init();
   }
 };
 </script>
@@ -18,22 +28,22 @@ export default {
 </template>
 
 <style lang="css">
-html {
-  flex: 1;
-  background-color: #cb9cdc;
+body {
+  margin: 0;
+  height: 100%;
+}
+#player {
+  background-color: #f1dfdd;
+  height: 100%;
 }
 .header-screen {
-  flex: 1;
   width: 100%;
   height: 82px;
   text-align: center;
 }
 #main {
-  flex: 3;
 }
 .footer-screen {
-  flex: 1;
-  height: 82px;
   background-color: #5546a6;
 }
 </style>

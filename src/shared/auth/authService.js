@@ -25,7 +25,6 @@ class AuthService {
           ...tokenResponse.data,
           expirationDate: expirationDate
         };
-        console.log(dataToken);
         localStorage.setItem(
           keyLocalStorageUserToken,
           JSON.stringify(dataToken)
@@ -77,17 +76,17 @@ class AuthService {
 
   redirectToForbidden() {
     // eslint-disable-next-line
-        window.location.href = `${process.env.BASE_URL}forbidden.html`
+    window.location.href = `${process.env.BASE_URL}forbidden.html`
   }
 
   redirectToErrorState() {
     // eslint-disable-next-line
-        window.location.href = `${process.env.BASE_URL}error.html`
+    window.location.href = `${process.env.BASE_URL}error.html`
   }
 
   redirectToHome() {
     // eslint-disable-next-line
-        window.location.href = `${process.env.BASE_URL}`
+    window.location.href = `${process.env.BASE_URL}`
   }
 
   redirectToSpotifyLogin() {
@@ -101,7 +100,7 @@ class AuthService {
     urlForLogin.searchParams.append("redirect_uri", callbackUrl);
     urlForLogin.searchParams.append(
       "scope",
-      "user-read-private user-read-email"
+      "user-read-private user-read-email streaming"
     );
 
     window.location = urlForLogin;

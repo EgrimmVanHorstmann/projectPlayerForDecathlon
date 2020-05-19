@@ -1,6 +1,6 @@
 <script>
 import AppArtistItem from "@/app/artist/AppArtistItem";
-import { SpotifyEntity } from "@/entities/spotify.entity";
+import SpotifyEntity  from "@/entities/spotify.entity";
 
 export default {
   name: "AppArtists",
@@ -22,17 +22,29 @@ export default {
 
 <template>
   <div class="artists">
-    <AppArtistItem
-      v-for="artist in artists"
-      :key="artist.id"
-      :artist="artist"
-    />
+    <h1>Ma selection artistes</h1>
+    <div class="jacket-artist">
+      <AppArtistItem
+        v-for="artist in artists"
+        :key="artist.id"
+        :artist="artist"
+      />
+    </div>
   </div>
 </template>
 
 <style lang="css" scoped>
-.artists {
-  flex: 1;
-  flex-direction: row;
+h1 {
+  text-align: center;
+  font-size: 40px;
+}
+.jacket-artist {
+  display: flex;
+  overflow: auto;
+}
+
+.jacket-artist a {
+  text-decoration: none;
+  color: black;
 }
 </style>

@@ -1,4 +1,6 @@
 <script>
+import SpotifyEntity from "@/entities/spotify.entity";
+
 export default {
   name: "AppPlaylistItem",
   components: {},
@@ -6,13 +8,20 @@ export default {
     track: { type: Object, default: () => {} }
   },
   computed: {},
-  methods: {}
+  methods: {
+    play() {
+      SpotifyEntity.getDevice().then(response =>
+        SpotifyEntity.playMusic(this.track.uri, response.devices[0].id)
+      );
+      //SpotifyEntity.getDevice().then(reponse =>);
+    }
+  }
 };
 </script>
 
 <template>
   <div class="track">
-    <span class="name">{{ track.name }}</span>
+    <span @click="play" class="name">{{ track.name }}</span>
   </div>
 </template>
 

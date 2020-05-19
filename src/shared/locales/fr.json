@@ -2,6 +2,7 @@
   "app_name": "Player Decathlon",
   "page_title_error": "Erreur",
   "page_title_not_found": "404 Non trouvé",
+  "my_artists": "Mes artistes préférés :",
   "menu" : {
     "home" : "Accueil",
     "artists" : "Artistes",

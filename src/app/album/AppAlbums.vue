@@ -1,6 +1,6 @@
 <script>
 import AppAlbumItem from "@/app/album/AppAlbumItem";
-import { SpotifyEntity } from "@/entities/spotify.entity";
+import SpotifyEntity  from "@/entities/spotify.entity";
 
 export default {
   name: "AppAlbums",
@@ -29,8 +29,25 @@ export default {
 
 <template>
   <div class="albums">
-    <AppAlbumItem v-for="album in albums" :key="album.id" :album="album" />
+    <h1>Albums</h1>
+    <div class="jacket-album">
+      <AppAlbumItem v-for="album in albums" :key="album.id" :album="album" />
+    </div>
   </div>
 </template>
 
-<style lang="css" scoped></style>
+<style lang="css" scoped>
+h1 {
+  text-align : center;
+  font-size: 40px;
+}
+.jacket-album {
+  display: flex;
+  overflow: auto;
+}
+
+.jacket-album a {
+  text-decoration: none;
+  color: black;
+}
+</style>

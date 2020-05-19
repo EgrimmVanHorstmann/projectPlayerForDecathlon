@@ -4,6 +4,7 @@ import conf from "@/shared/config";
 import userService from "@/shared/auth/authStore";
 import { configureExpecto } from "@/shared/lib/Expecto";
 import spotifyStore from "@/shared/stores/spotify.store";
+import playerStore from "@/shared/stores/player.store";
 
 export const SET_APP_INITIALIZE = "SET_APP_INITIALIZE";
 export const SET_APP_USER = "SET_APP_USER";
@@ -37,6 +38,10 @@ const modules = {
   spotify: {
     namespaced: true,
     ...spotifyStore
+  },
+  player: {
+    namespaced: true,
+    ...playerStore
   }
 };
 
@@ -56,12 +61,17 @@ const store = new Vuex.Store({
 if (module.hot) {
   module.hot.accept(["@/shared/stores/spotify.store"], () => {
     const newModuleSpotify = require("@/shared/stores/spotify.store").default;
+    const newModulePlayer = require("@/shared/stores/player.store").default;
     // swap in the new modules
     store.hotUpdate({
       modules: {
         spotify: {
           namespaced: true,
           ...newModuleSpotify
+        },
+        player: {
+          namespaced: true,
+          ...newModulePlayer
         }
       }
     });

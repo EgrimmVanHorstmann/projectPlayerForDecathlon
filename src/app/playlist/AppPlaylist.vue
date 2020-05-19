@@ -1,5 +1,5 @@
 <script>
-import { SpotifyEntity } from "@/entities/spotify.entity";
+import SpotifyEntity from "@/entities/spotify.entity";
 import AppPlaylistItem from "@/app/playlist/AppPlaylistItem";
 
 export default {
@@ -9,12 +9,14 @@ export default {
   },
   data() {
     return {
-      playlist: null
+      playlist: null,
+      albumId: null
     };
   },
   mounted() {
-    const albumId = this.$route.query.albumId;
-    SpotifyEntity.getAlbumTracks(albumId).then(
+    this.albumId = this.$route.query.albumId;
+    console.log(this.albumId)
+    SpotifyEntity.getAlbumTracks(this.albumId).then(
       response => (this.playlist = response ? response.items : null)
     );
   }
@@ -23,6 +25,14 @@ export default {
 
 <template>
   <div class="playlist">
+    <iframe
+      :src="`https://open.spotify.com/embed/album/${albumId}`"
+      width="300"
+      height="300"
+      frameborder="0"
+      allowtransparency="true"
+      allow="encrypted-media"
+    ></iframe>
     <AppPlaylistItem v-for="track in playlist" :key="track.id" :track="track" />
   </div>
 </template>
